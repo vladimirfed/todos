@@ -31,8 +31,13 @@ function App() {
 
   return (
     <div className="App">
-      <header>
-        <h2 className="Tasks">Task list: {todos.length} </h2>
+      <header className="Tasks" >
+        <div>
+        <h3 >Task list: {todos.length} </h3>
+        <h3 >
+          Done Tasks: {todos.filter((todo)=>todo.done !== false ).length} 
+        </h3>
+        </div>
       </header>
       <TodoForm addTodo={addTodo} />
 

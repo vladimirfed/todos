@@ -1,5 +1,4 @@
 import React from "react";
-import "./style.css";
 
 const ToDo = ({ todo, handlerTodo, removeTodo }) => {
   return (
