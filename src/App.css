@@ -2,37 +2,79 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App .item-todo {
+  padding: 14px;
+  width: 250px;
+  margin: 0 auto;
+  text-align: left;
+  margin-top: 15px;
+  background: linear-gradient(
+    90deg,
+    rgb(18, 140, 180) 0%,
+    rgb(19, 52, 136) 100%
+  );
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App .item-todo .item-text {
+  display: inline-block;
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Tasks{
+  padding: 14px;
+  width: 250px;
+  margin: 0 auto;
+  text-align: left;
+  margin-top: 15px;
+  background: linear-gradient(
+    90deg,
+    rgb(18, 140, 180) 0%,
+    rgb(19, 52, 136) 100%
+  );
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.App input {
+  padding: 14px 32px 14px 16px;
+  margin-top: 15px;
+  border-radius: 4px 0 0 4px;
+  border: 2px solid #146eaf;
+  outline: none;
+  background: transparent;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App button {
+  padding: 16px 7px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  outline: none;
+  background: linear-gradient(
+    90deg,
+    rgb(18, 140, 180) 0%,
+    rgb(19, 52, 136) 100%
+  );
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.App .item-todo .item-delete {
+  display: inline-block;
+  cursor: pointer;
+  float: right;
+  font-size: 18px;
+  position: relative;
+  left: -4px;
+  bottom: 19px;
+}
+
+.strike {
+  text-decoration: line-through;
 }
