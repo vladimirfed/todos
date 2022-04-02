@@ -19,6 +19,19 @@
   cursor: pointer;
 }
 
+.App .imp{
+
+  background: linear-gradient(
+    90deg,
+    rgb(64, 39, 118) 0%,
+    rgb(118, 19, 136) 100%
+  );
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 .App .item-todo .item-text {
   display: inline-block;
   cursor: pointer;
@@ -50,6 +63,17 @@
   background: transparent;
 }
 
+.Board{
+  border: 2px solid #146eaf;
+  margin-top: 15px;
+  padding: 14px;
+  width: 300px;
+  margin: 0 auto;
+  text-align: left;
+  margin-top: 15px;
+  border-radius: 5px;
+}
+
 .App button {
   padding: 16px 7px;
   border: none;
@@ -69,12 +93,13 @@
   display: inline-block;
   cursor: pointer;
   float: right;
-  font-size: 18px;
+  font-size: 15px;
   position: relative;
-  left: -4px;
-  bottom: 19px;
+  left: 0px;
+  bottom: 34px;
 }
 
 .strike {
   text-decoration: line-through;
 }
+

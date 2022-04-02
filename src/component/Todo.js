@@ -1,10 +1,8 @@
 import React from "react";
 
-const ToDo = ({ todo, handlerTodo, removeTodo }) => {
+const ToDo = ({ todo, handlerTodo,pinTodo, removeTodo,handlerImportant }) => {
   return (
-    <div key={todo.id} className="item-todo" >
-      
-      
+    <div key={todo.id} className={todo.important ? "item-todo imp" : "item-todo"}>
       <div>
         <div
           className={todo.done ? "item-text strike" : "item-text"}
@@ -13,7 +11,18 @@ const ToDo = ({ todo, handlerTodo, removeTodo }) => {
           {todo.task}
         </div>
       </div>
-      <div className="item-delete" onClick={() => removeTodo(todo.id)}>X</div>
+      <p className="item-delete" 
+      onClick={() => removeTodo(todo.id)}>
+        🗑️
+      </p>
+      <p className="item-delete"
+      onClick={() => handlerImportant(todo.id)}>
+        ⭐
+      </p>
+      <p className="item-delete"
+      onClick={() => pinTodo(todo.id)}>
+        📌
+      </p>
     </div>
   );
 };
