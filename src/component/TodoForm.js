@@ -12,7 +12,6 @@ const TodoForm = ({ addTodo }) => {
 
   const handleChange = (e) => {
     setTodoInput(e.target.value);
-
   };
 
   const handleKeyDown = (e) => {

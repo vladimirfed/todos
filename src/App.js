@@ -1,12 +1,15 @@
 import "./App.css";
 import Board from "./component/Board";
+import SelectTodo from "./component/SelectTodo";
 import TodoForm from "./component/TodoForm.js";
 import { useState } from "react";
 
 function App() {
   const [todos, setTodos] = useState([]);
   const [deleted, setDeleted] = useState(0);
+  const [select, setSelect] = useState('');
 
+//--------------------------------------------------------
   const addTodo = (todoInput) => {
     if (todoInput) {
       const newTodo = {
@@ -23,7 +26,6 @@ function App() {
     setTodos([...todos.filter((todo) => todo.id !== id)]);
 
     setDeleted(deleted + 1);
-    // console.log(deleted);
   };
 
   const pinTodo = (id) => {
@@ -49,6 +51,18 @@ function App() {
     ]);
   };
 
+  const sortTodo = (task) => {
+    // setSelect(sort)
+    setTodos([...todos].sort((a,b)=>{
+      if(a.task < b.task) { return -1; }
+      if(a.task > b.task) { return 1; }
+      return 0;
+  }))
+  // WORK BUT NEED TO REFACTOR !!!
+    // console.log(sort)
+  }
+
+//-----------------------------------------------------------------------------
   return (
     <div className="App">
       <header className="Tasks">
@@ -65,6 +79,13 @@ function App() {
         </div>
       </header>
       <TodoForm addTodo={addTodo} />
+      <SelectTodo 
+      onChange={sortTodo}
+      defaultValue="Sort by"
+      options={[
+        {value: 'task', name: 'A-Z'},
+        {value: 'done', name: 'Done'},
+      ]} />
       <Board
         todos={todos}
         removeTodo={removeTodo}
