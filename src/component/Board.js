@@ -1,12 +1,18 @@
-import React from 'react';
+import React from "react";
 import ToDo from "./Todo.js";
 
-
-const Board = ({todos, removeTodo,handlerTodo,pinTodo, handlerImportant}) => {
-    return (
-        <div className='Board'>
-            <h1>Board</h1>
-            {todos.map((todo) => {
+const Board = ({
+    boards,
+  todos,
+  removeTodo,
+  handlerTodo,
+  pinTodo,
+  handlerImportant,
+}) => {
+  return (
+    <div className="Board">
+      <h1 className="App">Board</h1>
+      {todos.map((todo) => {
         return (
           <ToDo
             todo={todo}
@@ -18,9 +24,17 @@ const Board = ({todos, removeTodo,handlerTodo,pinTodo, handlerImportant}) => {
           />
         );
       })}
-      {/* <ToDo /> */}
-        </div>
-    );
+{/* <div>{boards.map(board=>{
+return(
+    <div>{board.title}</div>
+)
+}
+</div> */}
+{/* {boards.map(board=><div>{board.title}</div>} */}
+
+      
+    </div>
+  );
 };
 
 export default Board;

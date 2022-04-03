@@ -1,7 +1,9 @@
 import React from "react";
+import Draggable from 'react-draggable';
 
 const ToDo = ({ todo, handlerTodo,pinTodo, removeTodo,handlerImportant }) => {
   return (
+    <Draggable>
     <div key={todo.id} className={todo.important ? "item-todo imp" : "item-todo"}>
       <div>
         <div
@@ -24,6 +26,7 @@ const ToDo = ({ todo, handlerTodo,pinTodo, removeTodo,handlerImportant }) => {
         📌
       </p>
     </div>
+    </Draggable>
   );
 };
 
