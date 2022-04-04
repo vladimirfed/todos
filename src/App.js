@@ -6,6 +6,11 @@ import { useState } from "react";
 
 function App() {
   const [todos, setTodos] = useState([]);
+  const [boards, setBoards] = useState([        
+        {id: 1, title: 'Backlog', cards: []},
+        {id: 2, title: 'In progress', cards: []},
+        {id: 3, title: 'Done', cards: []}
+                                       ]);
   const [deleted, setDeleted] = useState(0);
   const [select, setSelect] = useState('');
 
@@ -19,8 +24,15 @@ function App() {
         important: false,
       };
       setTodos([...todos, newTodo].reverse());
+      let x   = setTodos([...todos, newTodo].reverse());
+      setBoards(
+        {id: 1, title: 'Backlog', cards: [x]},
+        {id: 2, title: 'In progress', cards: []},
+        {id: 3, title: 'Done', cards: []}
     }
   };
+  
+  
 
   const removeTodo = (id) => {
     setTodos([...todos.filter((todo) => todo.id !== id)]);
@@ -87,6 +99,7 @@ function App() {
         {value: 'done', name: 'Done'},
       ]} />
       <Board
+        boards={boards}
         todos={todos}
         removeTodo={removeTodo}
         handlerTodo={handlerTodo}
