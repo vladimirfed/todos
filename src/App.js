@@ -28,7 +28,7 @@ function App() {
       setBoards(
         {id: 1, title: 'Backlog', cards: [x]},
         {id: 2, title: 'In progress', cards: []},
-        {id: 3, title: 'Done', cards: []}
+        {id: 3, title: 'Done', cards: []})
     }
   };
   
