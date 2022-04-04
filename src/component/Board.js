@@ -1,7 +1,9 @@
+import { fireEvent } from "@testing-library/react";
 import React from "react";
 import ToDo from "./Todo.js";
 
 const Board = ({
+    boards,
   todos,
   removeTodo,
   handlerTodo,
@@ -25,6 +27,13 @@ const Board = ({
               />
             );
           })}
+          
+                  {boards.map(board=>{
+            return(
+                <div>{board.title}</div>
+            )
+        })}
+        
     </div>
   );
 };

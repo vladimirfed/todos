@@ -8,6 +8,11 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [deleted, setDeleted] = useState(0);
   const [select, setSelect] = useState('');
+  const [boards, setBoards] = useState([        
+    {id: 1, title: 'Backlog', cards: []},
+    {id: 2, title: 'In progress', cards: []},
+    {id: 3, title: 'Done', cards: []}
+  ]);
 
 //--------------------------------------------------------
   const addTodo = (todoInput) => {
@@ -19,6 +24,11 @@ function App() {
         important: false,
       };
       setTodos([...todos, newTodo].reverse());
+      let x   = setTodos([...todos, newTodo].reverse());
+      setBoards(
+        {id: 1, title: 'Backlog', cards: [x]},
+        {id: 2, title: 'In progress', cards: []},
+        {id: 3, title: 'Done', cards: []})
     }
   };
 
@@ -88,6 +98,7 @@ function App() {
       ]} />
       <Board
         todos={todos}
+        boards={boards}
         removeTodo={removeTodo}
         handlerTodo={handlerTodo}
         handlerImportant={handlerImportant}
