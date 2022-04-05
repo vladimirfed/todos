@@ -95,6 +95,7 @@ function App() {
       options={[
         {value: 'task', name: 'A-Z'},
         {value: 'done', name: 'Done'},
+        {value: 'important', name: 'Important'},
       ]} />
       <Board
         todos={todos}
