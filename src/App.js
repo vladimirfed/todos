@@ -27,6 +27,7 @@ function App() {
       let x   = setTodos([...todos, newTodo].reverse());
       setBoards(
         {id: 1, title: 'Backlog', cards: [x]},
+        id: 1, title: 'New', cards: [x]},
         {id: 2, title: 'In progress', cards: []},
         {id: 3, title: 'Done', cards: []})
     }
